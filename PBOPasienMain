@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        Pasien pasien1 = new Pasien("", "", "");
+
+        int menu = 0;
+
+        do {
+            System.out.println("=== MENU KLINIK ===");
+            System.out.println("1. Daftar Pasien Baru");
+            System.out.println("2. Update Status Pasien");
+            System.out.println("3. Tampilkan Data Pasien");
+            System.out.println("4. Keluar");
+            System.out.print("Pilih menu: ");
+            menu = input.nextInt();
+            input.nextLine();
+
+            if (menu == 1) {
+                System.out.print("Masukkan Nama Pasien : ");
+                String nama = input.nextLine();
+
+                System.out.print("Masukkan Penyakit : ");
+                String penyakit = input.nextLine();
+
+                System.out.print("Masukkan Status Baru (Dirawat / Pulang): ");
+                String statusAwal = input.nextLine();
+
+                pasien1.setStatusPasien(statusAwal);
+                System.out.println("Status pasien berhasil diubah!\n");
+
+                pasien1 = new Pasien(nama, penyakit, statusAwal);
+
+            } else if (menu == 2) {
+                System.out.print("Masukkan Status Baru (Dirawat / Pulang): ");
+                String statusBaru = input.nextLine();
+
+                pasien1.setStatusPasien(statusBaru);
+                System.out.println("Status pasien berhasil diubah!\n");
+
+            } else if (menu == 3) {
+                pasien1.tampilkanInfo();
+
+            } else {
+                System.out.println("Terima kasih, sistem klinik ditutup.");
+            }
+
+        } while (menu <= 3);
+    }
+}
