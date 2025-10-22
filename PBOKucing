@@ -1,0 +1,26 @@
+public class Kucing {
+    private String nama;
+    private int Usia;
+
+    public Kucing(String namaKucing, int usiaKucing) {
+        this.nama = namaKucing;
+        Usia = usiaKucing;
+        System.out.println("\n objek kucing  " + this.nama + " telah dibuat! Usia awal : " + Usia);
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public int getUsia() {
+        return Usia;
+    }
+
+    public void setUsia(int usia) {
+        Usia = usia;
+    }
+}
