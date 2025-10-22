@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+         Membuat objek buku menggunakan konstruktor
+        Scanner input= new Scanner(System.in);
+        Buku buku1 = new Buku("","", 0,"");
+        int i=0;
+
+        do{
+
+            System.out.println("1. Tambah Buku");
+            System.out.println("2. Update status Buku");
+            System.out.println("3. Tampilkan");
+            System.out.println("4. Keluar");
+            i=input.nextInt();
+//           Agar setelah input int tidak error gunakan input.nextline
+
+            input.nextLine();
+            if(i==1){
+                System.out.println("Masukkan Judul Buku :");
+                String judul=input.nextLine();
+                System.out.println("Masukkan Penulis :");
+                String penulis= input.nextLine();
+                System.out.println("Masukkan Tahun Terbit :");
+                int tahun= input.nextInt();
+                buku1 = new Buku(judul,penulis, tahun,"Tersedia");
+            }else if(i==2){
+                System.out.println("Masukkan Status Buku :");
+                String status=input.nextLine();
+                buku1.setStatusDipinjam(status);
+            }else if(i==3){
+                buku1.tampilkanInfo();
+            }else{
+                System.out.println("Get out");
+            }
+        }while(i<=4);
+        Ikan ikan = new Ikan();
+        ikan.setJenis("Koi");
+        System.out.println("Jenis ikan : " + ikan.getJenis());
+
+
+    }
+}
