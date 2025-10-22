@@ -1,0 +1,13 @@
+public class Lingkaran {
+    private final double pi = 3.14;
+    private double r;
+
+    // Constructor
+    public Lingkaran(double jarijari) {
+        r = jarijari;
+    }
+
+    public double hitungLuas() {
+        return pi * r * r;
+    }
+}
