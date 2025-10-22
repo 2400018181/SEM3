@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan Nama Kucing Pertama: ");
+        String nama1 = input.nextLine();
+
+        System.out.print("Masukkan Usia Awal " + nama1 + " (tahun): ");
+        int usia1 = input.nextInt();
+
+        Kucing kucing1 = new Kucing(nama1, usia1);
+
+        input.nextLine(); // Membersihkan buffer setelah nextInt()
+
+        System.out.print("Masukkan Nama Kucing Kedua: ");
+        String nama2 = input.nextLine();
+
+        System.out.print("Masukkan Usia Awal " + nama2 + " (tahun): ");
+        int usia2 = input.nextInt();
+
+        Kucing kucing2 = new Kucing(nama2, usia2);
+
+        // PENGGUNAAN GETTER: Mengakses data yang telah diinisialisasi
+        System.out.println("Kucing Pertama: " + kucing1.getNama() + ", Usia: " + kucing1.getUsia() + " tahun.");
+        System.out.println("Kucing Kedua: " + kucing2.getNama() + ", Usia: " + kucing2.getUsia() + " tahun.");
+
+        System.out.print("Masukkan Usia Baru untuk " + kucing1.getNama() + " (Contoh: 4): ");
+        int usiaBaruValid = input.nextInt();
+        kucing1.setUsia(usiaBaruValid); // Setter dengan validasi
+
+        System.out.println("\n--- Hasil Akhir ---");
+        System.out.println("Usia " + kucing1.getNama() + " yang sekarang: " + kucing1.getUsia() + " tahun.");
+
+        input.close();
+    }
+}
