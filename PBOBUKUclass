@@ -1,0 +1,25 @@
+public class Buku {
+    private String judul;
+    private String penulis;
+    private int tahunTerbit;
+    private String statusDipinjam;
+
+    public Buku(String judul, String penulis, int tahunTerbit, String status) {
+        this.judul = judul;
+        this.penulis = penulis;
+        this.tahunTerbit = tahunTerbit;
+        this.statusDipinjam = status;
+    }
+
+    public void setStatusDipinjam(String status) {
+        this.statusDipinjam=status;
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("\n=== Informasi Buku ===");
+        System.out.println("Judul        : " + judul);
+        System.out.println("Penulis      : " + penulis);
+        System.out.println("Tahun Terbit : " + tahunTerbit);
+        System.out.println("Status       : " + statusDipinjam+"\n");
+    }
+}
