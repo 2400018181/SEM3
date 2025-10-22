@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\n=========================================");
+        System.out.println("PERHITUNGAN LUAS BANGUNAN");
+        System.out.println("=========================================");
+
+        // LINGKARAN
+        System.out.print("Masukkan jari-jari lingkaran: ");
+        double jari = input.nextDouble();
+        Lingkaran lingkaran = new Lingkaran(jari);
+        System.out.println("Luas Lingkaran: " + lingkaran.hitungLuas());
+
+        // PERSEGI
+        System.out.print("Masukkan panjang sisi persegi: ");
+        double sisi = input.nextDouble();
+        Persegi persegi = new Persegi(sisi);
+        System.out.println("Luas Persegi: " + persegi.hitungLuas());
+
+        // PERSEGI PANJANG
+        System.out.print("Masukkan panjang persegi panjang: ");
+        double panjang = input.nextDouble();
+        System.out.print("Masukkan lebar persegi panjang: ");
+        double lebar = input.nextDouble();
+        PersegiPanjang pp = new PersegiPanjang(panjang, lebar);
+        System.out.println("Luas Persegi Panjang: " + pp.hitungLuas());
+
+        Segitiga segitiga = new Segitiga();
+    }
+}
