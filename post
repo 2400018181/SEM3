@@ -1,0 +1,91 @@
+#include <iostream>
+using namespace std;
+
+struct KTP {
+    int NIK;
+    int tanggal;
+    string nama;
+    string alamat;
+    KTP* next;
+};
+
+KTP* head = nullptr;
+
+void tambahData() {
+    KTP* baru = new KTP;
+
+    cout << "Masukkan NIK: ";
+    cin >> baru->NIK;
+    cin.ignore(); 
+
+    cout << "Masukkan Nama: ";
+    getline(cin, baru->nama);
+
+    cout << "Masukkan Alamat: ";
+    getline(cin, baru->alamat);
+
+    cout << "Masukkan Tanggal Lahir: ";
+    cin >> baru->tanggal;
+
+    baru->next = nullptr;
+
+    if (head == nullptr) {
+        head = baru;
+    } else {
+        KTP* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = baru;
+    }
+
+    cout << "Data berhasil ditambahkan!\n";
+}
+
+void tampilkanData() {
+    if (head == nullptr) {
+        cout << "Belum ada data KTP.\n";
+        return;
+    }
+
+    KTP* temp = head;
+    cout << "\n===== DAFTAR DATA KTP =====\n";
+    while (temp != nullptr) {
+        cout << "NIK           : " << temp->NIK << endl;
+        cout << "Nama          : " << temp->nama << endl;
+        cout << "Alamat        : " << temp->alamat << endl;
+        cout << "Tanggal Lahir : " << temp->tanggal << endl;
+        cout << "----------------------------\n";
+        temp = temp->next;
+    }
+}
+
+
+int main() {
+    int pilih;
+
+    do {
+        cout << "\n===== MENU =====\n";
+        cout << "1. Tambahkan Data KTP\n";
+        cout << "2. Tampilkan Data KTP\n";
+        cout << "3. Keluar\n";
+        cout << "Pilih: ";
+        cin >> pilih;
+
+        switch (pilih) {
+            case 1:
+                tambahData();
+                break;
+            case 2:
+                tampilkanData();
+                break;
+            case 3:
+                cout << "Terima kasih!\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid!\n";
+        }
+    } while (pilih != 3);
+
+    return 0;
+}
