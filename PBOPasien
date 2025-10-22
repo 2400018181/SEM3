@@ -1,0 +1,22 @@
+public class Pasien {
+    private String nama;
+    private String penyakit;
+    private String statusPasien;
+
+    public Pasien(String nama, String penyakit, String statusPasien) {
+        this.nama = nama;
+        this.penyakit = penyakit;
+        this.statusPasien = statusPasien;
+    }
+
+    public void setStatusPasien(String statusPasien) {
+        this.statusPasien = statusPasien;
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("\n=== Informasi Pasien ===");
+        System.out.println("Nama     : " + nama);
+        System.out.println("Penyakit : " + penyakit);
+        System.out.println("Status   : " + statusPasien + "\n");
+    }
+}
