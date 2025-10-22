@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Mbanking mb = new Mbanking();
+
+        System.out.print("Masukkan Nama: ");
+        String nama = input.nextLine();
+        mb.setNama(nama);
+
+        System.out.print("Masukkan No Rekening: ");
+        String noRek = input.nextLine();
+        mb.setNoRek(noRek);
+
+        System.out.print("Masukkan Password: ");
+        String password = input.nextLine();
+        mb.setPassword(password);
+
+        int no;
+        do{
+            System.out.println("\n\nSELAMAT DATANG " + mb.getNama());
+            System.out.println("Daftar Menu Transaksi:");
+            System.out.println("1. Masukkan Uang");
+            System.out.println("2. Transfer Uang");
+            System.out.println("3. Cek Saldo");
+            System.out.println("4. Logout");
+            System.out.print("Masukkan no pilihan Anda: ");
+            no = input.nextInt();
+
+            switch (no){
+                case 1:
+                    System.out.print("Masukkan jumlah uang: Rp ");
+                    double jmlhUang = input.nextDouble();
+                    mb.setJmlhUang(jmlhUang);
+                    mb.topUp(jmlhUang);
+                    break;
+                case 2:
+                    System.out.print("Masukkan jumlah uang yang ingin di transfer: Rp ");
+                    double jmlhTransfer = input.nextDouble();
+                    mb.setJmlhTransfer(jmlhTransfer);
+                    mb.transfer(jmlhTransfer);
+                    break;
+                case 3:
+                    System.out.println("Saldo Anda Rp " + mb.getSaldo());
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Pilihan tidak tersedia");
+                    break;
+
+            }
+        }while (no >= 1 && no <= 3);
+        System.out.println("Terimakasih telah menggunakan layanan kami");
+    }
+}
