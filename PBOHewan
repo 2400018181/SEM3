@@ -1,0 +1,19 @@
+public class Hewan {
+    protected String nama;
+    protected int umur;
+
+    public Hewan(String nama, int umur) {
+        this.nama = nama;
+        this.umur = umur;
+    }
+
+    public void infoHewan() {
+        System.out.println("=== Info Hewan ===");
+        System.out.println("Nama : " + this.nama);
+        System.out.println("Umur : " + this.umur);
+    }
+
+    public void makanan(){
+        System.out.print("Makanan : ");
+    };
+}
