@@ -1,0 +1,11 @@
+public class Kucing extends Hewan{
+    public Kucing(String nama, int umur) {
+        super(nama, umur);
+    }
+
+    @Override
+    public void makanan() {
+        super.makanan();
+            System.out.println("Makan Whiskas");
+        }
+}
